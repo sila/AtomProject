@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atom.Web", "Atom.Web\Atom.Web.csproj", "{E56668B1-FEE9-43C8-92B7-DAC1B568D29E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{DE47D62D-661C-489D-AE25-1068D3E629FE}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E56668B1-FEE9-43C8-92B7-DAC1B568D29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56668B1-FEE9-43C8-92B7-DAC1B568D29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56668B1-FEE9-43C8-92B7-DAC1B568D29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56668B1-FEE9-43C8-92B7-DAC1B568D29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE47D62D-661C-489D-AE25-1068D3E629FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE47D62D-661C-489D-AE25-1068D3E629FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE47D62D-661C-489D-AE25-1068D3E629FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE47D62D-661C-489D-AE25-1068D3E629FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
