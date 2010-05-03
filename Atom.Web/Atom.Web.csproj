@@ -42,12 +42,48 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accordion\Animation.cs" />
+    <Compile Include="Accordion\Design\AccordionDesigner.cs" />
+    <Compile Include="Accordion\EventArgs\AccordionChangedEventArgs.cs" />
+    <Compile Include="Accordion\EventArgs\AccordionChangingEventArgs.cs" />
+    <Compile Include="Accordion\Item.cs" />
+    <Compile Include="Accordion\ItemChangeType.cs" />
+    <Compile Include="Accordion\ItemCollectionEditor.cs" />
+    <Compile Include="Accordion\JQAccordion.cs" />
+    <Compile Include="AutoComplete\JQAutoComplete.cs" />
+    <Compile Include="Button\ButtonType.cs" />
+    <Compile Include="Button\JQButton.cs" />
+    <Compile Include="DatePicker\JQDataPicker.cs" />
+    <Compile Include="Dialog\Design\DialogDesigner.cs" />
+    <Compile Include="Dialog\JQDialog.cs" />
+    <Compile Include="Progressbar\Design\ProgressbarDesigner.cs" />
+    <Compile Include="Progressbar\EventArgs\ProgressbarValueChangedEventArgs.cs" />
+    <Compile Include="Progressbar\JQProgressbar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slider\JQSlider.cs" />
+    <Compile Include="Tabs\AnimationType.cs" />
+    <Compile Include="Tabs\Design\TabsDesigner.cs" />
+    <Compile Include="Tabs\EventArgs\TabsChangedEventArgs.cs" />
+    <Compile Include="Tabs\EventArgs\TabsChangingEventArgs.cs" />
+    <Compile Include="Tabs\EventArgs\TabsRemovedEventArgs.cs" />
+    <Compile Include="Tabs\EventArgs\TabsRemovingEventArgs.cs" />
+    <Compile Include="Tabs\JqTabs.cs" />
+    <Compile Include="Tabs\Tab.cs" />
+    <Compile Include="Tabs\TabAnimationSpeed.cs" />
+    <Compile Include="Tabs\TabChangeType.cs" />
+    <Compile Include="Tabs\TabCollectionEditor.cs" />
+    <Compile Include="Tabs\TabOrientation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Accordion\" />
-    <Folder Include="Button\" />
-    <Folder Include="Dialog\" />
+    <Folder Include="AutoComplete\Design\" />
+    <Folder Include="AutoComplete\EventArgs\" />
+    <Folder Include="Button\Design\" />
+    <Folder Include="Button\EventArgs\" />
+    <Folder Include="DatePicker\Design\" />
+    <Folder Include="DatePicker\EventArgs\" />
+    <Folder Include="Dialog\EventArgs\" />
+    <Folder Include="Slider\Design\" />
+    <Folder Include="Slider\EventArgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
