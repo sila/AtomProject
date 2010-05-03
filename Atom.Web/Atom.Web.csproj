@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,7 @@
     <Compile Include="Accordion\JQAccordion.cs" />
     <Compile Include="AutoComplete\JQAutoComplete.cs" />
     <Compile Include="Button\ButtonType.cs" />
+    <Compile Include="Button\Design\ButtonDesigner.cs" />
     <Compile Include="Button\JQButton.cs" />
     <Compile Include="DatePicker\JQDataPicker.cs" />
     <Compile Include="Dialog\Design\DialogDesigner.cs" />
@@ -77,7 +79,6 @@
   <ItemGroup>
     <Folder Include="AutoComplete\Design\" />
     <Folder Include="AutoComplete\EventArgs\" />
-    <Folder Include="Button\Design\" />
     <Folder Include="Button\EventArgs\" />
     <Folder Include="DatePicker\Design\" />
     <Folder Include="DatePicker\EventArgs\" />
