@@ -1,0 +1,156 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
+using System.Collections;
+using System.Security.Permissions;
+using System.Web.UI.Design;
+
+
+namespace TemplateControls
+{
+    [AspNetHostingPermission(SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal), AspNetHostingPermission(SecurityAction.InheritanceDemand, Level = AspNetHostingPermissionLevel.Minimal), DefaultProperty("Contacts"), ParseChildren(true, "Contacts"), ToolboxData(
+    "<{0}:QuickContacts runat=\"server\"> </{0}:QuickContacts>")]
+    public class QuickContacts : WebControl
+    {
+        private List<Contact> contactsList;
+
+        [
+        Category("Behavior"),
+        Description("The contacts collection"),
+        DesignerSerializationVisibility(
+            DesignerSerializationVisibility.Content),
+        Editor(typeof(ContactCollectionEditor), typeof(UITypeEditor)),
+        PersistenceMode(PersistenceMode.InnerDefaultProperty)
+        ]
+        public List<Contact> Contacts
+        {
+            get
+            {
+                if (contactsList == null)
+                {
+                    contactsList = new List<Contact>();
+                }
+                return contactsList;
+            }
+        }
+
+        protected override void RenderContents(
+            HtmlTextWriter writer)
+        {
+            writer.Write("<table border=1><tr><td>");
+            foreach (Contact item in this.contactsList)
+            {
+                writer.Write(item.Name);
+                foreach (Control cont in item.Controls)
+                {
+                    writer.Write("<table border=1><tr><td>");
+                    cont.RenderControl(writer);
+                    writer.Write("</td></tr></table>");
+                }
+
+            }
+            writer.Write("</td></tr></table>");
+        }
+
+    }
+    [ToolboxItem(false)]
+    public class Contact : Control, INamingContainer
+    {
+        private string nameValue;
+        private ITemplate pSimpleTemplate;
+
+        [
+        Browsable(false),
+        DesignerSerializationVisibility(
+            DesignerSerializationVisibility.Content),
+        PersistenceMode(PersistenceMode.InnerProperty)
+        ]
+        public ITemplate SimpleTemplate
+        {
+            get { return pSimpleTemplate; }
+            set { pSimpleTemplate = value; }
+        }
+        protected override void CreateChildControls()
+        {
+            Controls.Clear();
+
+            if (SimpleTemplate != null)
+                SimpleTemplate.InstantiateIn(this);
+        }
+
+
+        //public Contact()
+        //    : this(String.Empty)
+        //{
+        //}
+
+        //public Contact(string name)
+        //{
+        //    nameValue = name;
+        //}
+
+        [
+        Category("Behavior"),
+        DefaultValue(""),
+        Description("Name of contact"),
+        NotifyParentProperty(true),
+        ]
+        public String Name
+        {
+            get
+            {
+                return nameValue;
+            }
+            set
+            {
+                nameValue = value;
+            }
+        }
+
+
+    }
+    public class ContactCollectionEditor : CollectionEditor
+    {
+        public ContactCollectionEditor(Type type)
+            : base(type)
+        {
+        }
+
+        protected override bool CanSelectMultipleInstances()
+        {
+            return false;
+        }
+
+        protected override Type CreateCollectionItemType()
+        {
+            return typeof(Contact);
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

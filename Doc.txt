@@ -1,0 +1,22 @@
+Accordion tag structure 
+
+<Accordion>
+	<Item>
+		<Header Text="Text" TargetURL="google.com"/>
+		<Template>
+			//content
+		</Template>
+	</Item>
+	<Item>
+		<Header/>
+		<Template>
+			//content
+		</Template>
+	</Item>
+</Accordion>
+
+++++++++++++++++++++++
+Desinger 
+
+	-Smart tag
+		1) add new item
