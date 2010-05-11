@@ -64,12 +64,12 @@ namespace Atom.Web.UI.WebControls.Slider
 
             startupScript.AppendFormat(" max: {0},", this.MaxValue);
             startupScript.AppendFormat(" min: {0},", this.MinValue);
-            startupScript.AppendFormat(" animate: {0},", this.Animation.ToString().ToLower());
-            startupScript.AppendFormat(" orientation: {0},", this.Orientation.ToString().ToLower());
+            startupScript.AppendFormat(" animate: '{0}',", this.Animation.ToString().ToLower());
+            startupScript.AppendFormat(" orientation: '{0}',", this.Orientation.ToString().ToLower());
             startupScript.AppendFormat(" range: {0},", this.Range.ToString().ToLower());
             startupScript.AppendFormat(" step: {0},", this.Step);
 
-            if (string.IsNullOrEmpty(this.RangeValue.ToString()))
+            if (!string.IsNullOrEmpty(this.RangeValue.ToString()))
             {
                 startupScript.AppendFormat(" value: {0},", this.Value);
             }
@@ -77,7 +77,7 @@ namespace Atom.Web.UI.WebControls.Slider
             {
                 startupScript.AppendFormat(" values: [{0},{1}],", this.Value, this.RangeValue);
             }
-            if (this.Enabled)
+            if (!this.Enabled)
             {
                 startupScript.AppendFormat(" disabled: true,");
             }
@@ -99,7 +99,7 @@ namespace Atom.Web.UI.WebControls.Slider
             get
             {
                 object max = ViewState["MaxValueViewState"];
-                return (max == null) ? 0 : Convert.ToInt32(max);
+                return (max == null) ? 100 : Convert.ToInt32(max);
             }
             set
             {
