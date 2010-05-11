@@ -13,6 +13,7 @@ using System.Web.UI;
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Tabs", "tabs")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Dialog", "dialog")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Button", "button")]
+[assembly: TagPrefix("Atom.Web.UI.WebControls.Slider", "slider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
