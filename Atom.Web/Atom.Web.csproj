@@ -62,7 +62,11 @@
     <Compile Include="Progressbar\EventArgs\ProgressbarValueChangedEventArgs.cs" />
     <Compile Include="Progressbar\JQProgressbar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slider\Design\SliderDesigner.cs" />
     <Compile Include="Slider\JQSlider.cs" />
+    <Compile Include="Slider\SliderAnimation.cs" />
+    <Compile Include="Slider\SliderOrientation.cs" />
+    <Compile Include="Slider\SliderRange.cs" />
     <Compile Include="Tabs\AnimationType.cs" />
     <Compile Include="Tabs\Design\TabsDesigner.cs" />
     <Compile Include="Tabs\EventArgs\TabsChangedEventArgs.cs" />
@@ -83,7 +87,6 @@
     <Folder Include="DatePicker\Design\" />
     <Folder Include="DatePicker\EventArgs\" />
     <Folder Include="Dialog\EventArgs\" />
-    <Folder Include="Slider\Design\" />
     <Folder Include="Slider\EventArgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

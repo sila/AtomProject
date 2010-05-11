@@ -1,0 +1,135 @@
+	.grid {
+		table-layout: fixed;
+		background-color: white;
+	}
+	.grid_td  {
+		padding: 2px;
+		text-align: left;
+		border-bottom: 1px solid #DEECFD;
+		border-right: 1px solid #DEECFD;
+	}
+	.grid_td_right {
+		border-right: 1px solid #99BBE8;
+	}
+	.grid_td_left {
+		border-left: 1px solid #99BBE8;
+	}
+	.grid_td_bottom {
+		border-bottom: 1px solid #99BBE8;
+	}
+	.grid_th  {
+		padding: 2px;
+		text-align: left;
+		font-weight: bold ;
+		color: #15428B;
+		height:12px;
+		border-top: 1px solid #99BBE8;
+		background-image: url("../images/grid-hrow.gif");
+	}
+	.grid_tr_odd {
+		background: #F5FAFE;
+	}
+	.grid_th_last {
+   	border-right: 1px solid #99BBE8;
+	}
+	.grid_th_split {
+		border-right: 1px solid #99BBE8;
+		}
+	.grid_tr_hover {
+		background: #DEECFD;
+	}
+	.grid_tr_selected {
+		background-color:#316AC5 !important;
+		color:white;
+	}
+	.gridResizer {
+		cursor:e-resize;
+		display:block;
+		float:right;
+		height: 18px;
+		margin:-2px -1px -2px 0px;
+		width:7px;
+		background: no-repeat center right;
+		/*background-image: url("../images/split.gif");*/
+	}
+	.gridLoader {
+		border: 1px solid #99BBE8;
+		background-color: white;
+  	text-align: center;
+		padding: 2px;
+	}
+	.gridHeader {
+		color: #15428B;
+		/*background: url("../images/grid-hrow.gif");*/
+		background: #D0DEF0;
+		/*height: 15px;*/
+		border: 1px solid #99BBE8;
+		border-bottom :0px;
+		padding: 2px;
+	}
+	.gridHeader span{
+		padding: 2px;
+	}
+	.gridFooter {
+		color: #15428B;
+		background-color : white;
+		border: 1px solid #99BBE8;
+		border-top: 0px;
+		padding: 2px;
+	}
+	.gridInlineEditor {
+		border : 0px none;
+
+		/*background:transparent none repeat scroll 0% 50%;*/
+
+	}
+	.gridFooter a{
+		font-weight:bold;
+		text-decoration: none;
+		color: #15428B;
+	}
+	.gridFooter a:hover{
+		text-decoration: underline;
+	}
+	.gridFooter div{
+		margin-top: 5px;
+		margin-bottom: 2px;
+		margin-left: 7px;
+		padding: 2px;
+	}
+	.gridFilterPanel {
+		border: 1px solid #99BBE8;
+		width: 280px;
+		padding: 2px;
+		background:#E2ECF8 none repeat scroll 0% 50%;
+	}
+	.gridFilterPanel input,select{
+		/*border: 1px solid #99BBE8;*/
+		margin: 3px;
+		width: 70px;
+		font-size: 10px;
+		color: #15428B;
+	}
+	.gridEditPanel {
+		border: 1px solid #99BBE8;
+		padding: 4px;
+		background:#E2ECF8 none repeat scroll 0% 50%;
+	}
+	.gridEditPanel_body input{
+		font-size: 10px;
+		width: 100px;
+	}
+	.gridEditPanel_footer input {
+		font-size: 10px;
+		margin: 4px;
+	}
+	.gridInsertPanel {
+		border: 1px solid #99BBE8;
+		padding: 4px;
+		width: 200px;
+		background:#E2ECF8 none repeat scroll 0% 50%;
+	}
+	.gridInsertPanel_body input {
+		font-size: 10px;
+		width: 100px;
+	}
