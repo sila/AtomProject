@@ -37,11 +37,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         //clear span tag
         protected override void Render(HtmlTextWriter writer)
         {
-            this.RenderContents(writer);
-        }
-
-        protected override void RenderContents(HtmlTextWriter writer)
-        {
             writer.AddAttribute(HtmlTextWriterAttribute.Name, this.UniqueID + "hiddenValue");
             writer.AddAttribute(HtmlTextWriterAttribute.Id, this.UniqueID + "hiddenValue");
             writer.AddAttribute(HtmlTextWriterAttribute.Type, "hidden");
@@ -57,8 +52,6 @@ namespace Atom.Web.UI.WebControls.Dialog
                 control.RenderControl(writer);
             }
             writer.RenderEndTag();
-
-            base.RenderContents(writer);
         }
 
         protected override void OnPreRender(EventArgs e)
