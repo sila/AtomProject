@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TestApp.Default" %>
 
+<%@ Register Assembly="Atom.Web" Namespace="Atom.Web.UI.WebControls.Dialog" TagPrefix="dialog" %>
 <%@ Register Assembly="Atom.Web" Namespace="Atom.Web.UI.WebControls.Slider" TagPrefix="slider" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +13,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <slider:JQSlider ID="JQSlider1" runat="server" Value="0" />
+        <dialog:JQDialog ID="JQDialog1" Title="kur" runat="server" AutoOpen="true" ShowAnimation="Explode"
+            HideAnimation="Explode">
+            <Template>
+                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                Kur</Template>
+        </dialog:JQDialog>
     </div>
     </form>
 </body>

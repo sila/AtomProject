@@ -14,12 +14,14 @@ namespace Atom.Web.UI.WebControls.Dialog
     AspNetHostingPermission(SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal),
     AspNetHostingPermission(SecurityAction.InheritanceDemand, Level = AspNetHostingPermissionLevel.Minimal),
     DefaultProperty(""),
+    ParseChildren(true),
+    PersistChildren(false),
     Designer(typeof(DialogDesigner)),
     ToolboxData("<{0}:JQDialog runat=\"server\"> </{0}:JQDialog>")
     ]
     public class JQDialog : WebControl, INamingContainer
     {
-        private ITemplate _temlpate;
+        private ITemplate _template;
 
         //Methods
         protected override void CreateChildControls()
@@ -27,9 +29,11 @@ namespace Atom.Web.UI.WebControls.Dialog
             Controls.Clear();
 
             if (Template != null)
+            {
                 Template.InstantiateIn(this);
+            }
         }
-        
+
         //clear span tag
         protected override void Render(HtmlTextWriter writer)
         {
@@ -182,19 +186,22 @@ namespace Atom.Web.UI.WebControls.Dialog
             return startupScript.ToString();
         }
 
-
-
-
         [
         Browsable(false),
         DesignerSerializationVisibility(
            DesignerSerializationVisibility.Content),
-         PersistenceMode(PersistenceMode.InnerProperty)
+        PersistenceMode(PersistenceMode.InnerProperty)
         ]
         public ITemplate Template
         {
-            get { return this._temlpate; }
-            set { this._temlpate = value; }
+            get
+            {
+                return this._template;
+            }
+            set
+            {
+                this._template = value;
+            }
         }
 
         [
@@ -232,7 +239,6 @@ namespace Atom.Web.UI.WebControls.Dialog
                 ViewState["HideAnimationViewState"] = value;
             }
         }
-
 
         [
         Category("Behavior"),
@@ -452,7 +458,6 @@ namespace Atom.Web.UI.WebControls.Dialog
                 ViewState["MinHeightViewState"] = value;
             }
         }
-
 
         [
         Category("Behavior"),
