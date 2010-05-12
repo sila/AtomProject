@@ -17,27 +17,9 @@ namespace Atom.Web.UI.WebControls.Dialog
     Designer(typeof(DialogDesigner)),
     ToolboxData("<{0}:JQDialog runat=\"server\"> </{0}:JQDialog>")
     ]
-    public class JQDialog : WebControl
+    public class JQDialog : WebControl, INamingContainer
     {
-        private string _header;
-        public string Header
-        {
-            get { return _header; }
-            set { _header = value; }
-        }
-
         private ITemplate _temlpate;
-        [
-        Browsable(false),
-        DesignerSerializationVisibility(
-           DesignerSerializationVisibility.Content),
-         PersistenceMode(PersistenceMode.InnerProperty)
-        ]
-        public ITemplate Template
-        {
-            get { return _temlpate; }
-            set { _temlpate = value; }
-        }
 
         //Methods
         protected override void CreateChildControls()
@@ -47,7 +29,7 @@ namespace Atom.Web.UI.WebControls.Dialog
             if (Template != null)
                 Template.InstantiateIn(this);
         }
-
+        
         //clear span tag
         protected override void Render(HtmlTextWriter writer)
         {
@@ -56,10 +38,16 @@ namespace Atom.Web.UI.WebControls.Dialog
 
         protected override void RenderContents(HtmlTextWriter writer)
         {
-            writer.AddAttribute(HtmlTextWriterAttribute.Id, this.UniqueID + "dialog");
-            writer.AddAttribute(HtmlTextWriterAttribute.Title, this.Header);
+            writer.AddAttribute(HtmlTextWriterAttribute.Name, this.UniqueID + "hiddenValue");
+            writer.AddAttribute(HtmlTextWriterAttribute.Id, this.UniqueID + "hiddenValue");
+            writer.AddAttribute(HtmlTextWriterAttribute.Type, "hidden");
+            writer.RenderBeginTag(HtmlTextWriterTag.Input);
+            writer.RenderEndTag();
 
+            writer.AddAttribute(HtmlTextWriterAttribute.Id, this.UniqueID);
+            writer.AddAttribute(HtmlTextWriterAttribute.Title, this.Title);
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
+
             foreach (Control control in this.Controls)
             {
                 control.RenderControl(writer);
@@ -84,9 +72,10 @@ namespace Atom.Web.UI.WebControls.Dialog
             StringBuilder startupScript = new StringBuilder();
 
             startupScript.AppendFormat("<script type=\"text/javascript\">");
+            startupScript.AppendFormat("var " + this.UniqueID + "; ");
             startupScript.AppendFormat("$(document).ready(function() {{ ");
-            startupScript.AppendFormat("var dialog" + this.UniqueID + " = $('#" + this.UniqueID + "dialog');");
-            startupScript.AppendFormat("dialog" + this.UniqueID + ".dialog({{");
+            startupScript.AppendFormat(this.UniqueID + " = $('#" + this.UniqueID + "');");
+            startupScript.AppendFormat(this.UniqueID + ".dialog({{");
 
             if (!this.AutoOpen)
             {
@@ -98,10 +87,6 @@ namespace Atom.Web.UI.WebControls.Dialog
                 startupScript.AppendFormat(" closeOnEscape: false,");
             }
 
-            startupScript.AppendFormat(" closeText: true,");
-
-            startupScript.AppendFormat(" dialogClass: true,");
-
             if (!this.Draggable)
             {
                 startupScript.AppendFormat(" draggable: false,");
@@ -111,11 +96,30 @@ namespace Atom.Web.UI.WebControls.Dialog
             {
                 startupScript.AppendFormat(" hide: '{0}',", this.HideAnimation.ToString().ToLower());
             }
-            startupScript.AppendFormat(" height: {0},", this.Height);
-            startupScript.AppendFormat(" maxHeight: {0},", this.MaxHeight);
-            startupScript.AppendFormat(" maxWidth: {0},", this.MaxWidth);
-            startupScript.AppendFormat(" minHeight: {0},", this.MinHeight);
-            startupScript.AppendFormat(" minWidth: {0},", this.MinWidth);
+            if (!string.IsNullOrEmpty(this.Height.ToString()))
+            {
+                startupScript.AppendFormat(" height: {0},", this.Height);
+            }
+            if (!string.IsNullOrEmpty(this.Width.ToString()))
+            {
+                startupScript.AppendFormat(" width: {0},", this.Width);
+            }
+            if (!string.IsNullOrEmpty(this.MaxHeight.ToString()))
+            {
+                startupScript.AppendFormat(" maxHeight: {0},", this.MaxHeight);
+            }
+            if (!string.IsNullOrEmpty(this.MaxWidth.ToString()))
+            {
+                startupScript.AppendFormat(" maxWidth: {0},", this.MaxWidth);
+            }
+            if (!string.IsNullOrEmpty(this.MinHeight.ToString()))
+            {
+                startupScript.AppendFormat(" minHeight: {0},", this.MinHeight);
+            }
+            if (!string.IsNullOrEmpty(this.MinWidth.ToString()))
+            {
+                startupScript.AppendFormat(" minWidth: {0},", this.MinWidth);
+            }
             if (this.Modal)
             {
                 startupScript.AppendFormat(" modal: true,");
@@ -163,13 +167,12 @@ namespace Atom.Web.UI.WebControls.Dialog
             {
                 startupScript.AppendFormat(" stack: false");
             }
-            startupScript.AppendFormat(" title: '{0}'", this.Title);
-            startupScript.AppendFormat(" width: {0}", this.Width);
-            startupScript.AppendFormat(" zIndex: {0}", this.ZIndex);
+            startupScript.AppendFormat(" title: '{0}',", this.Title);
+            startupScript.AppendFormat(" zIndex: {0},", this.ZIndex);
 
             if (!this.Enabled)
             {
-                startupScript.AppendFormat(" disabled: true");
+                startupScript.AppendFormat(" disabled: true,");
             }
 
             startupScript.AppendFormat("}})");
@@ -177,6 +180,21 @@ namespace Atom.Web.UI.WebControls.Dialog
             startupScript.AppendFormat("</script>");
 
             return startupScript.ToString();
+        }
+
+
+
+
+        [
+        Browsable(false),
+        DesignerSerializationVisibility(
+           DesignerSerializationVisibility.Content),
+         PersistenceMode(PersistenceMode.InnerProperty)
+        ]
+        public ITemplate Template
+        {
+            get { return this._temlpate; }
+            set { this._temlpate = value; }
         }
 
         [
