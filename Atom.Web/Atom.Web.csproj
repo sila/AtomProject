@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Atom.Web</RootNamespace>
-    <AssemblyName>Atom.Web</AssemblyName>
+    <AssemblyName>Atom.Web.UI.WebControls</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Nonshipping>true</Nonshipping>
@@ -57,6 +57,7 @@
     <Compile Include="Button\JQButton.cs" />
     <Compile Include="DatePicker\JQDataPicker.cs" />
     <Compile Include="Dialog\Design\DialogDesigner.cs" />
+    <Compile Include="Dialog\DialogPosition.cs" />
     <Compile Include="Dialog\JQDialog.cs" />
     <Compile Include="Progressbar\Design\ProgressbarDesigner.cs" />
     <Compile Include="Progressbar\EventArgs\ProgressbarValueChangedEventArgs.cs" />
