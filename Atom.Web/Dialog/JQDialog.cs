@@ -34,7 +34,7 @@ namespace Atom.Web.UI.WebControls.Dialog
             }
         }
 
-        //clear span tag
+        
         protected override void Render(HtmlTextWriter writer)
         {
             writer.AddAttribute(HtmlTextWriterAttribute.Name, this.UniqueID + "hiddenValue");
