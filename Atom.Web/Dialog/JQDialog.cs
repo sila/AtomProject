@@ -90,28 +90,35 @@ namespace Atom.Web.UI.WebControls.Dialog
 
             if (!this.AutoOpen)
             {
-                startupScript.AppendFormat(" autoOpen: false");
+                startupScript.AppendFormat(" autoOpen: false,");
             }
+
             if (!this.CloseOnEsc)
             {
-                startupScript.AppendFormat(" closeOnEscape: false");
+                startupScript.AppendFormat(" closeOnEscape: false,");
             }
-            startupScript.AppendFormat(" closeText: true");
-            startupScript.AppendFormat(" dialogClass: true");
+
+            startupScript.AppendFormat(" closeText: true,");
+
+            startupScript.AppendFormat(" dialogClass: true,");
+
             if (!this.Draggable)
             {
-                startupScript.AppendFormat(" draggable: false");
+                startupScript.AppendFormat(" draggable: false,");
             }
-            startupScript.AppendFormat(" height: true");
-            startupScript.AppendFormat(" hide: true");
-            startupScript.AppendFormat(" height: true");
-            startupScript.AppendFormat(" maxHeight: true");
-            startupScript.AppendFormat(" maxWidth: true");
-            startupScript.AppendFormat(" minHeight: true");
-            startupScript.AppendFormat(" minWidth: true");
+
+            if (this.HideAnimation != DialogHideAnimation.None)
+            {
+                startupScript.AppendFormat(" hide: '{0}',", this.HideAnimation.ToString().ToLower());
+            }
+            startupScript.AppendFormat(" height: {0},", this.Height);
+            startupScript.AppendFormat(" maxHeight: {0},", this.MaxHeight);
+            startupScript.AppendFormat(" maxWidth: {0},", this.MaxWidth);
+            startupScript.AppendFormat(" minHeight: {0},", this.MinHeight);
+            startupScript.AppendFormat(" minWidth: {0},", this.MinWidth);
             if (this.Modal)
             {
-                startupScript.AppendFormat(" modal: true");
+                startupScript.AppendFormat(" modal: true,");
             }
             //postion
             if ((this.Position == DialogPosition.Center)
@@ -120,30 +127,45 @@ namespace Atom.Web.UI.WebControls.Dialog
                 || (this.Position == DialogPosition.Left)
                 || (this.Position == DialogPosition.Right))
             {
-                startupScript.AppendFormat(" position: '{0}'", this.Position.ToString().ToLower());
+                startupScript.AppendFormat(" position: '{0}',", this.Position.ToString().ToLower());
             }
-            if (this.Position == DialogPosition.CenterLeft)
+            else
             {
+                if (this.Position == DialogPosition.CenterLeft)
+                { startupScript.AppendFormat(" position: ['center','left'],"); }
+
+                if (this.Position == DialogPosition.CenterRight)
+                { startupScript.AppendFormat(" position: ['center','right'],"); }
+
+                if (this.Position == DialogPosition.BottomLeft)
+                { startupScript.AppendFormat(" position: ['bottom','left'],"); }
+
+                if (this.Position == DialogPosition.BottomRight)
+                { startupScript.AppendFormat(" position: ['bottom','right'],"); }
+
+                if (this.Position == DialogPosition.TopLeft)
+                { startupScript.AppendFormat(" position: ['top','left'],"); }
+
+                if (this.Position == DialogPosition.TopRight)
+                { startupScript.AppendFormat(" position: ['top','right'],"); }
 
             }
-            if (this.Position == DialogPosition.CenterRight) { }
-            if (this.Position == DialogPosition.BottomLeft) { }
-            if (this.Position == DialogPosition.BottomRight) { }
-            if (this.Position == DialogPosition.TopLeft) { }
-            if (this.Position == DialogPosition.TopRight) { }
-
             if (!this.Resizable)
             {
                 startupScript.AppendFormat(" resizable: false");
             }
-            startupScript.AppendFormat(" show: true");
+            if (this.ShowAnimation != DialogShowAnimation.None)
+            {
+                startupScript.AppendFormat(" show: '{0}',", this.ShowAnimation.ToString().ToLower());
+            }
+
             if (!this.Stack)
             {
                 startupScript.AppendFormat(" stack: false");
             }
             startupScript.AppendFormat(" title: '{0}'", this.Title);
-            startupScript.AppendFormat(" width: true");
-            startupScript.AppendFormat(" zIndex: true");
+            startupScript.AppendFormat(" width: {0}", this.Width);
+            startupScript.AppendFormat(" zIndex: {0}", this.ZIndex);
 
             if (!this.Enabled)
             {
@@ -160,7 +182,61 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
+        DefaultValue(DialogShowAnimation.None)
+        ]
+        public DialogShowAnimation ShowAnimation
+        {
+            get
+            {
+                object show = ViewState["ShowAnimationViewState"];
+                return (show == null) ? DialogShowAnimation.None : (DialogShowAnimation)show;
+            }
+            set
+            {
+                ViewState["ShowAnimationViewState"] = value;
+            }
+        }
+
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(DialogHideAnimation.None)
+        ]
+        public DialogHideAnimation HideAnimation
+        {
+            get
+            {
+                object hide = ViewState["HideAnimationViewState"];
+                return (hide == null) ? DialogHideAnimation.None : (DialogHideAnimation)hide;
+            }
+            set
+            {
+                ViewState["HideAnimationViewState"] = value;
+            }
+        }
+
+
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(1000)
+        ]
+        public int ZIndex
+        {
+            get
+            {
+                object zIndex = ViewState["ZIndexViewState"];
+                return (zIndex == null) ? 1000 : Convert.ToInt32(zIndex);
+            }
+            set
+            {
+                ViewState["ZIndexViewState"] = value;
+            }
+        }
+
+        [
+        Category("Behavior"),
+        Description(""),
         DefaultValue(true)
         ]
         public bool AutoOpen
@@ -179,7 +255,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(true)
         ]
         public bool CloseOnEsc
@@ -198,7 +273,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(true)
         ]
         public bool Draggable
@@ -217,7 +291,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(false)
         ]
         public bool Modal
@@ -236,7 +309,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(true)
         ]
         public bool Resizable
@@ -255,7 +327,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(true)
         ]
         public bool Stack
@@ -274,7 +345,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue(DialogPosition.Center)
         ]
         public DialogPosition Position
@@ -293,7 +363,6 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        UrlProperty(""),
         DefaultValue("")
         ]
         public string Title
@@ -309,7 +378,82 @@ namespace Atom.Web.UI.WebControls.Dialog
             }
         }
 
+        [
+        Category("Behavior"),
+        Description(""),
+        UrlProperty(""),
+        DefaultValue("")
+        ]
+        public Unit MaxHeight
+        {
+            get
+            {
+                object maxHeight = ViewState["MaxHeightViewState"];
+                return (maxHeight == null) ? Unit.Empty : (Unit)maxHeight;
+            }
+            set
+            {
+                ViewState["MaxHeightViewState"] = value;
+            }
+        }
 
+        [
+        Category("Behavior"),
+        Description(""),
+        UrlProperty(""),
+        DefaultValue("")
+        ]
+        public Unit MaxWidth
+        {
+            get
+            {
+                object maxWidth = ViewState["MaxWidthViewState"];
+                return (maxWidth == null) ? Unit.Empty : (Unit)maxWidth;
+            }
+            set
+            {
+                ViewState["MaxWidthViewState"] = value;
+            }
+        }
+
+        [
+        Category("Behavior"),
+        Description(""),
+        UrlProperty(""),
+        DefaultValue("")
+        ]
+        public Unit MinHeight
+        {
+            get
+            {
+                object minHeight = ViewState["MinHeightViewState"];
+                return (minHeight == null) ? Unit.Empty : (Unit)minHeight;
+            }
+            set
+            {
+                ViewState["MinHeightViewState"] = value;
+            }
+        }
+
+
+        [
+        Category("Behavior"),
+        Description(""),
+        UrlProperty(""),
+        DefaultValue("")
+        ]
+        public Unit MinWidth
+        {
+            get
+            {
+                object minWidth = ViewState["MinWidthViewState"];
+                return (minWidth == null) ? Unit.Empty : (Unit)minWidth;
+            }
+            set
+            {
+                ViewState["MinWidthViewState"] = value;
+            }
+        }
 
         [
         EditorBrowsable(EditorBrowsableState.Never),
