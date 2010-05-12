@@ -42,8 +42,14 @@ namespace Atom.Web.UI.WebControls.Tabs
         ]
         public ITemplate Template
         {
-            get { return _temlpate; }
-            set { _temlpate = value; }
+            get
+            {
+                return _temlpate;
+            }
+            set
+            {
+                _temlpate = value;
+            }
         }
 
         [
