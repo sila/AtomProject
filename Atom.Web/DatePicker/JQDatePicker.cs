@@ -42,9 +42,9 @@ namespace Atom.Web.UI.WebControls.DatePicker
             writer.AddAttribute(HtmlTextWriterAttribute.Type, "hidden");
             writer.RenderBeginTag(HtmlTextWriterTag.Input);
             writer.RenderEndTag();
-        
-        
-        
+
+
+
         }
 
         protected override void OnPreRender(EventArgs e)
@@ -57,6 +57,254 @@ namespace Atom.Web.UI.WebControls.DatePicker
             base.OnPreRender(e);
         }
 
+
+        //properties
+
+        //[
+        //Category("Behavior"),
+        //Description(""),
+        //DefaultValue("")
+        //]
+        //public string Range
+        //{
+        //    get
+        //    {
+        //        object range = (object)ViewState["ViewState"];
+        //        return (range == null) ? "" : range.ToString();
+        //    }
+        //    set
+        //    {
+        //        ViewState["ViewState"] = value;
+        //    }
+        //}
+        //bool
+        public bool AutoSize
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ButtonImageOnly
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ChangeMonth
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ChangeYear
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ConstrainInput
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool GotoCurrent
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool HideIfNoPrevNext
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool IsRTL
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool NavigationAsDateFormat
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool SelectOtherMonths
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ShowButtonPanel
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ShowMonthAfterYear
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ShowWeek
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public bool ShowOtherMonths { get; set; }
+        public bool Draggable { get; set; }
+        
+        //str
+        public string AltField
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string AltFormat
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string AppendText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ButtonImage
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ButtonText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string CloseText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string CurrentText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string DateFormat
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string WeekHeader
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string YearRange
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string YearSuffix
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ShowOn
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ShowAnimation
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string NextText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string Duration
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string PrevText
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+
+        //int
+        public int FirstDay
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public int StepMonths
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public int ShowCurrentAtPos
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        
+        //arr
+        public string DayNames
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string DayNamesMin
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string DayNamesShort
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string DefaultDate
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string MaxDate
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string MinDate
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string MonthNames
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string MonthNamesShort
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string NumberOfMonths
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ShortYearCutoff
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+        public string ShowOptions
+        {
+            get { return ""; }
+            set { ViewState["ViewState"] = value; }
+        }
+
+
+
+        #region inherit properties
 
         [
         EditorBrowsable(EditorBrowsableState.Never),
@@ -214,5 +462,8 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 base.CssClass = value;
             }
         }
+
+        #endregion
+
     }
 }
