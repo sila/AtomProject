@@ -58,6 +58,7 @@
     <Compile Include="DatePicker\DatePickerAnimation.cs" />
     <Compile Include="DatePicker\DatePickerDuration.cs" />
     <Compile Include="DatePicker\DatePickerMode.cs" />
+    <Compile Include="DatePicker\DatePickerShowOn.cs" />
     <Compile Include="DatePicker\Design\DatePickerDesigner.cs" />
     <Compile Include="DatePicker\JQDatePicker.cs" />
     <Compile Include="Dialog\Design\DialogDesigner.cs" />
