@@ -55,7 +55,8 @@
     <Compile Include="Button\ButtonType.cs" />
     <Compile Include="Button\Design\ButtonDesigner.cs" />
     <Compile Include="Button\JQButton.cs" />
-    <Compile Include="DatePicker\JQDataPicker.cs" />
+    <Compile Include="DatePicker\Design\DatePickerDesigner.cs" />
+    <Compile Include="DatePicker\JQDatePicker.cs" />
     <Compile Include="Dialog\Design\DialogDesigner.cs" />
     <Compile Include="Dialog\DialogHideAnimation.cs" />
     <Compile Include="Dialog\DialogPosition.cs" />
@@ -87,7 +88,6 @@
     <Folder Include="AutoComplete\Design\" />
     <Folder Include="AutoComplete\EventArgs\" />
     <Folder Include="Button\EventArgs\" />
-    <Folder Include="DatePicker\Design\" />
     <Folder Include="DatePicker\EventArgs\" />
     <Folder Include="Dialog\EventArgs\" />
     <Folder Include="Slider\EventArgs\" />
