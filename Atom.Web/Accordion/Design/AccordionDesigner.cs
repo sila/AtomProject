@@ -127,7 +127,7 @@ namespace Atom.Web.UI.WebControls.Accordion
                 TypeDescriptor.GetProperties(acc)["ChangeType"].SetValue(acc, value);
             }
         }
-        public Animation AnimationType
+        public AccordionDuration AnimationType
         {
             get
             {

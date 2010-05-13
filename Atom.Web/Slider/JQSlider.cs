@@ -200,14 +200,14 @@ namespace Atom.Web.UI.WebControls.Slider
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(SliderAnimation.Normal)
+        DefaultValue(SliderDuration.Normal)
         ]
-        public SliderAnimation Animation
+        public SliderDuration Animation
         {
             get
             {
                 object animation = (object)ViewState["AnimationViewState"];
-                return (animation == null) ? SliderAnimation.Normal : (SliderAnimation)animation;
+                return (animation == null) ? SliderDuration.Normal : (SliderDuration)animation;
             }
             set
             {

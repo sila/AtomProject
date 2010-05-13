@@ -234,15 +234,15 @@ namespace Atom.Web.UI.WebControls.Accordion // System.Wen.UI.DropDownList - Baev
                 }
             }
             //AnimationType
-            if (this.AnimationType == Animation.None)
+            if (this.AnimationType == AccordionDuration.None)
             {
                 startupScript.AppendFormat("animated: false, ");
             }
-            if (this.AnimationType == Animation.Bounceslide)
+            if (this.AnimationType == AccordionDuration.Bounceslide)
             {
                 startupScript.AppendFormat("animated: 'bounceslide', ");
             }
-            if (this.AnimationType == Animation.Slide)
+            if (this.AnimationType == AccordionDuration.Slide)
             {
                 startupScript.AppendFormat("animated: 'slide', ");
             }
@@ -573,14 +573,14 @@ namespace Atom.Web.UI.WebControls.Accordion // System.Wen.UI.DropDownList - Baev
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(Animation.None)
+        DefaultValue(AccordionDuration.None)
         ]
-        public Animation AnimationType
+        public AccordionDuration AnimationType
         {
             get
             {
                 object fillSpaceValue = (object)ViewState["AnimationTypeViewState"];
-                return (fillSpaceValue == null) ? Animation.None : (Animation)fillSpaceValue;
+                return (fillSpaceValue == null) ? AccordionDuration.None : (AccordionDuration)fillSpaceValue;
             }
             set
             {

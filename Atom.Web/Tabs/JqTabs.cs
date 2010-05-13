@@ -320,15 +320,15 @@ namespace Atom.Web.UI.WebControls.Tabs
                 startupScript.AppendFormat("collapsible: {0},", this.Collapsible.ToString().ToLower());
             }
             //animation and animation speed
-            if (this.Animate == AnimationType.Content)
+            if (this.Animate == TabAnimationType.Content)
             {
                 startupScript.AppendFormat(" fx:{{opacity: 'toggle' ,duration: {0} }},", this.AnimationSpeed.ToString().ToLower());
             }
-            if (this.Animate == AnimationType.Height)
+            if (this.Animate == TabAnimationType.Height)
             {
                 startupScript.AppendFormat(" fx:{{height: 'toggle' ,duration: {0} }},", this.AnimationSpeed.ToString().ToLower());
             }
-            if (this.Animate == AnimationType.HeightAndContent)
+            if (this.Animate == TabAnimationType.HeightAndContent)
             {
                 startupScript.AppendFormat(" fx:{{height: 'toggle', opacity: 'toggle' ,duration: {0} }},", this.AnimationSpeed.ToString().ToLower());
             }
@@ -618,14 +618,14 @@ namespace Atom.Web.UI.WebControls.Tabs
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(AnimationType.None)
+        DefaultValue(TabAnimationType.None)
         ]
-        public AnimationType Animate
+        public TabAnimationType Animate
         {
             get
             {
                 object animation = (object)ViewState["AnimateViewState"];
-                return (animation == null) ? AnimationType.None : (AnimationType)animation;
+                return (animation == null) ? TabAnimationType.None : (TabAnimationType)animation;
             }
             set
             {
@@ -673,14 +673,14 @@ namespace Atom.Web.UI.WebControls.Tabs
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(TabAnimation.Normal)
+        DefaultValue(TabDuration.Normal)
         ]
-        public TabAnimation AnimationSpeed
+        public TabDuration AnimationSpeed
         {
             get
             {
                 object animationSpeed = (object)ViewState["AnimationSpeedViewState"];
-                return (animationSpeed == null) ? TabAnimation.Normal : (TabAnimation)animationSpeed;
+                return (animationSpeed == null) ? TabDuration.Normal : (TabDuration)animationSpeed;
             }
             set
             {

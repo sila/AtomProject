@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Atom.Web.UI.WebControls.Tabs
 {
-    public enum TabAnimationSpeed
+    public enum TabAnimationType
     {
-        Slow,
-        Normal,
-        Fast
+        None,
+        Height,
+        Content,
+        HeightAndContent
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Atom.Web.UI.WebControls.Slider
 {
-    public enum SliderAnimation
+    public enum SliderDuration
     {
         Slow,
         Normal,

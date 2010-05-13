@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Atom.Web.UI.WebControls.Accordion
 {
-    public enum Animation
+    public enum AccordionDuration
     {
         Slide,
         Bounceslide,

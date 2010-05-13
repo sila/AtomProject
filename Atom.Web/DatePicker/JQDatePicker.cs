@@ -28,6 +28,8 @@ namespace Atom.Web.UI.WebControls.DatePicker
             startupScript.AppendFormat(this.UniqueID + " = $('#" + this.UniqueID + "');");
 
 
+
+
             startupScript.AppendFormat("}})");
             startupScript.AppendFormat("}})");
             startupScript.AppendFormat("</script>");
@@ -57,12 +59,9 @@ namespace Atom.Web.UI.WebControls.DatePicker
             base.OnPreRender(e);
         }
 
-
         //properties
+        #region bool
 
-
-
-        //bool
         [
         Category("Behavior"),
         Description(""),
@@ -319,106 +318,332 @@ namespace Atom.Web.UI.WebControls.DatePicker
             }
         }
 
-        //str
+        #endregion
+        #region str
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string AltField
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object autoSize = ViewState["AltFieldViewState"];
+                return (autoSize == null) ? string.Empty : autoSize.ToString();
+            }
+            set
+            {
+                ViewState["AltFieldViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string AltFormat
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object altFormat = ViewState["AltFormatViewState"];
+                return (altFormat == null) ? string.Empty : altFormat.ToString();
+            }
+            set
+            {
+                ViewState["AltFormatViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string AppendText
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object appendText = ViewState["AppendTextViewState"];
+                return (appendText == null) ? string.Empty : appendText.ToString();
+            }
+            set
+            {
+                ViewState["AppendTextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string ButtonImage
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object buttonImage = ViewState["ButtonImageViewState"];
+                return (buttonImage == null) ? string.Empty : buttonImage.ToString();
+            }
+            set
+            {
+                ViewState["ButtonImageViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string ButtonText
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object buttonText = ViewState["ButtonTextViewState"];
+                return (buttonText == null) ? string.Empty : buttonText.ToString();
+            }
+            set
+            {
+                ViewState["ButtonTextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string CloseText
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object closeText = ViewState["CloseTextViewState"];
+                return (closeText == null) ? string.Empty : closeText.ToString();
+            }
+            set
+            {
+                ViewState["CloseTextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string CurrentText
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object currentText = ViewState["CurrentTextViewState"];
+                return (currentText == null) ? string.Empty : currentText.ToString();
+            }
+            set
+            {
+                ViewState["CurrentTextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string DateFormat
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object dateFormat = ViewState["DateFormatViewState"];
+                return (dateFormat == null) ? string.Empty : dateFormat.ToString();
+            }
+            set
+            {
+                ViewState["DateFormatViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string WeekHeader
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object weekHeader = ViewState["WeekHeaderViewState"];
+                return (weekHeader == null) ? string.Empty : weekHeader.ToString();
+            }
+            set
+            {
+                ViewState["WeekHeaderViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string YearRange
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object yearRange = ViewState["YearRangeViewState"];
+                return (yearRange == null) ? string.Empty : yearRange.ToString();
+            }
+            set
+            {
+                ViewState["YearRangeViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string YearSuffix
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object yearSuffix = ViewState["YearSuffixViewState"];
+                return (yearSuffix == null) ? string.Empty : yearSuffix.ToString();
+            }
+            set
+            {
+                ViewState["YearSuffixViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string ShowOn
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showOn = ViewState["ShowOnViewState"];
+                return (showOn == null) ? string.Empty : showOn.ToString();
+            }
+            set
+            {
+                ViewState["ShowOnViewState"] = value;
+            }
         }
-        public string ShowAnimation
-        {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
-        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string NextText
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object nextText = ViewState["NextTextViewState"];
+                return (nextText == null) ? string.Empty : nextText.ToString();
+            }
+            set
+            {
+                ViewState["NextTextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public string PrevText
+        {
+            get
+            {
+                object prevText = ViewState["PrevTextViewState"];
+                return (prevText == null) ? string.Empty : prevText.ToString();
+            }
+            set
+            {
+                ViewState["PrevTextViewState"] = value;
+            }
+        }
+       
+        //enum
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string Duration
         {
             get { return ""; }
             set { ViewState["ViewState"] = value; }
         }
-        public string PrevText
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public string ShowAnimation
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object yearSuffix = ViewState["YearSuffixViewState"];
+                return (yearSuffix == null) ? string.Empty : yearSuffix.ToString();
+            }
+            set
+            {
+                ViewState["YearSuffixViewState"] = value;
+            }
         }
-
-        //int
+        #endregion
+        #region int
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(0)
+        ]
         public int FirstDay
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object firstDay = ViewState["FirstDayViewState"];
+                return (firstDay == null) ? 0 : Convert.ToInt32(firstDay);
+            }
+            set
+            {
+                ViewState["FirstDayViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(1)
+        ]
         public int StepMonths
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object stepMonths = ViewState["StepMonthsViewState"];
+                return (stepMonths == null) ? 1 : Convert.ToInt32(stepMonths);
+            }
+            set
+            {
+                ViewState["StepMonthsViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(0)
+        ]
         public int ShowCurrentAtPos
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showCurrentAtPos = ViewState["ShowCurrentAtPosViewState"];
+                return (showCurrentAtPos == null) ? 0 : Convert.ToInt32(showCurrentAtPos);
+            }
+            set
+            {
+                ViewState["ShowCurrentAtPosViewState"] = value;
+            }
         }
+        #endregion
 
-        //arr
+        #region arr
+
         public string DayNames
         {
             get { return ""; }
@@ -475,7 +700,7 @@ namespace Atom.Web.UI.WebControls.DatePicker
             set { ViewState["ViewState"] = value; }
         }
 
-
+        #endregion
 
         #region inherit properties
 
