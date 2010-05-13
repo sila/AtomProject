@@ -89,7 +89,7 @@ namespace Atom.Web.UI.WebControls.Dialog
                 startupScript.AppendFormat(" draggable: false,");
             }
 
-            if (this.HideAnimation != DialogHideAnimation.None)
+            if (this.HideAnimation != DialogAnimation.None)
             {
                 startupScript.AppendFormat(" hide: '{0}',", this.HideAnimation.ToString().ToLower());
             }
@@ -155,7 +155,7 @@ namespace Atom.Web.UI.WebControls.Dialog
             {
                 startupScript.AppendFormat(" resizable: false");
             }
-            if (this.ShowAnimation != DialogShowAnimation.None)
+            if (this.ShowAnimation != DialogAnimation.None)
             {
                 startupScript.AppendFormat(" show: '{0}',", this.ShowAnimation.ToString().ToLower());
             }
@@ -200,14 +200,14 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(DialogShowAnimation.None)
+        DefaultValue(DialogAnimation.None)
         ]
-        public DialogShowAnimation ShowAnimation
+        public DialogAnimation ShowAnimation
         {
             get
             {
                 object show = ViewState["ShowAnimationViewState"];
-                return (show == null) ? DialogShowAnimation.None : (DialogShowAnimation)show;
+                return (show == null) ? DialogAnimation.None : (DialogAnimation)show;
             }
             set
             {
@@ -218,14 +218,14 @@ namespace Atom.Web.UI.WebControls.Dialog
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(DialogHideAnimation.None)
+        DefaultValue(DialogAnimation.None)
         ]
-        public DialogHideAnimation HideAnimation
+        public DialogAnimation HideAnimation
         {
             get
             {
                 object hide = ViewState["HideAnimationViewState"];
-                return (hide == null) ? DialogHideAnimation.None : (DialogHideAnimation)hide;
+                return (hide == null) ? DialogAnimation.None : (DialogAnimation)hide;
             }
             set
             {
