@@ -16,14 +16,14 @@
     <form id="form1" runat="server">
     <div>
         <ul>
-            <li><a href="#">Accordion</a></li>
-            <li><a href="#">AutoComplete</a></li>
-            <li><a href="#">Button</a></li>
-            <li><a href="#">DatePicker</a> </li>
-            <li><a href="#">Dialog</a></li>
-            <li><a href="#">Progressbar</a></li>
-            <li><a href="#">Slider</a></li>
-            <li><a href="#">Tabs</a></li>
+            <li><a href="Accordion.aspx">Accordion</a></li>
+            <li><a href="AutoComplete.aspx">AutoComplete</a></li>
+            <li><a href="Button.aspx">Button</a></li>
+            <li><a href="DatePicker.aspx">DatePicker</a> </li>
+            <li><a href="Dialog.aspx">Dialog</a></li>
+            <li><a href="Progressbar.aspx">Progressbar</a></li>
+            <li><a href="Slider.aspx">Slider</a></li>
+            <li><a href="Tabs.aspx">Tabs</a></li>
         </ul>
     </div>
     </form>
