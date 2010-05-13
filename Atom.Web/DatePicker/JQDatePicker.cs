@@ -60,92 +60,265 @@ namespace Atom.Web.UI.WebControls.DatePicker
 
         //properties
 
-        //[
-        //Category("Behavior"),
-        //Description(""),
-        //DefaultValue("")
-        //]
-        //public string Range
-        //{
-        //    get
-        //    {
-        //        object range = (object)ViewState["ViewState"];
-        //        return (range == null) ? "" : range.ToString();
-        //    }
-        //    set
-        //    {
-        //        ViewState["ViewState"] = value;
-        //    }
-        //}
+
+
         //bool
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool AutoSize
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object autoSize = ViewState["AutoSizeViewState"];
+                return (autoSize == null) ? false : Convert.ToBoolean(autoSize);
+            }
+            set
+            {
+                ViewState["AutoSizeViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ButtonImageOnly
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object buttonImageOnly = ViewState["ButtonImageOnlyViewState"];
+                return (buttonImageOnly == null) ? false : Convert.ToBoolean(buttonImageOnly);
+            }
+            set
+            {
+                ViewState["ButtonImageOnlyViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ChangeMonth
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object changeMonth = ViewState["ChangeMonthViewState"];
+                return (changeMonth == null) ? false : Convert.ToBoolean(changeMonth);
+            }
+            set
+            {
+                ViewState["ChangeMonthViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ChangeYear
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object changeYear = ViewState["ChangeYearViewState"];
+                return (changeYear == null) ? false : Convert.ToBoolean(changeYear);
+            }
+            set
+            {
+                ViewState["ChangeYearViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(true)
+        ]
         public bool ConstrainInput
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object changeYear = ViewState["ConstrainInputViewState"];
+                return (changeYear == null) ? true : Convert.ToBoolean(changeYear);
+            }
+            set
+            {
+                ViewState["ConstrainInputViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool GotoCurrent
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object gotoCurrent = ViewState["GotoCurrentViewState"];
+                return (gotoCurrent == null) ? false : Convert.ToBoolean(gotoCurrent);
+            }
+            set
+            {
+                ViewState["GotoCurrentViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool HideIfNoPrevNext
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object hideIfNoPrevNext = ViewState["HideIfNoPrevNextViewState"];
+                return (hideIfNoPrevNext == null) ? false : Convert.ToBoolean(hideIfNoPrevNext);
+            }
+            set
+            {
+                ViewState["HideIfNoPrevNextViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool IsRTL
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object rtl = ViewState["IsRTLViewState"];
+                return (rtl == null) ? false : Convert.ToBoolean(rtl);
+            }
+            set
+            {
+                ViewState["IsRTLViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool NavigationAsDateFormat
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object navigationAsDateFormat = ViewState["NavigationAsDateFormatViewState"];
+                return (navigationAsDateFormat == null) ? false : Convert.ToBoolean(navigationAsDateFormat);
+            }
+            set
+            {
+                ViewState["NavigationAsDateFormatViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool SelectOtherMonths
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object selectOtherMonths = ViewState["SelectOtherMonthsViewState"];
+                return (selectOtherMonths == null) ? false : Convert.ToBoolean(selectOtherMonths);
+            }
+            set
+            {
+                ViewState["SelectOtherMonthsViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ShowButtonPanel
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showButtonPanel = ViewState["ShowButtonPanelViewState"];
+                return (showButtonPanel == null) ? false : Convert.ToBoolean(showButtonPanel);
+            }
+            set
+            {
+                ViewState["ShowButtonPanelViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ShowMonthAfterYear
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showMonthAfterYear = ViewState["ShowMonthAfterYearViewState"];
+                return (showMonthAfterYear == null) ? false : Convert.ToBoolean(showMonthAfterYear);
+            }
+            set
+            {
+                ViewState["ShowMonthAfterYearViewState"] = value;
+            }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
         public bool ShowWeek
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showWeek = ViewState["ShowWeekViewState"];
+                return (showWeek == null) ? false : Convert.ToBoolean(showWeek);
+            }
+            set
+            {
+                ViewState["ShowWeekViewState"] = value;
+            }
         }
-        public bool ShowOtherMonths { get; set; }
-        public bool Draggable { get; set; }
-        
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
+        public bool ShowOtherMonths
+        {
+            get
+            {
+                object showOtherMonths = ViewState["ShowOtherMonthsViewState"];
+                return (showOtherMonths == null) ? false : Convert.ToBoolean(showOtherMonths);
+            }
+            set
+            {
+                ViewState["ShowOtherMonthsViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(false)
+        ]
+        public bool Draggable
+        {
+            get
+            {
+                object draggable = ViewState["DraggableViewState"];
+                return (draggable == null) ? false : Convert.ToBoolean(draggable);
+            }
+            set
+            {
+                ViewState["DraggableViewState"] = value;
+            }
+        }
+
         //str
         public string AltField
         {
@@ -244,7 +417,7 @@ namespace Atom.Web.UI.WebControls.DatePicker
             get { return ""; }
             set { ViewState["ViewState"] = value; }
         }
-        
+
         //arr
         public string DayNames
         {
