@@ -673,14 +673,14 @@ namespace Atom.Web.UI.WebControls.Tabs
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue(TabAnimationSpeed.Normal)
+        DefaultValue(TabAnimation.Normal)
         ]
-        public TabAnimationSpeed AnimationSpeed
+        public TabAnimation AnimationSpeed
         {
             get
             {
                 object animationSpeed = (object)ViewState["AnimationSpeedViewState"];
-                return (animationSpeed == null) ? TabAnimationSpeed.Normal : (TabAnimationSpeed)animationSpeed;
+                return (animationSpeed == null) ? TabAnimation.Normal : (TabAnimation)animationSpeed;
             }
             set
             {
