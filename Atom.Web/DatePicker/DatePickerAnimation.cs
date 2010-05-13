@@ -9,6 +9,7 @@ namespace Atom.Web.UI.WebControls.DatePicker
     {
         None,
         Blind,
+        Show,
         Bounce,
         Clip,
         Drop,
