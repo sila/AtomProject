@@ -1,0 +1,1 @@
+The Atom project is open source project based on ASP.NET (4.0) and jQuery platform.
