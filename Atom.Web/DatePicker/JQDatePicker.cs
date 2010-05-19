@@ -756,58 +756,135 @@ namespace Atom.Web.UI.WebControls.DatePicker
 
         public string DayNames
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object dayNames = ViewState["DayNamesViewState"];
+                return (dayNames == null) ? string.Empty : dayNames.ToString();
+            }
+            set
+            {
+                ViewState["DayNamesViewState"] = value;
+            }
         }
         public string DayNamesMin
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object dayNamesMin = ViewState["DayNamesMinViewState"];
+                return (dayNamesMin == null) ? string.Empty : dayNamesMin.ToString();
+            }
+            set
+            {
+                ViewState["DayNamesMinViewState"] = value;
+            }
         }
         public string DayNamesShort
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object dayNamesShort = ViewState["DayNamesShortViewState"];
+                return (dayNamesShort == null) ? string.Empty : dayNamesShort.ToString();
+            }
+            set
+            {
+                ViewState["DayNamesShortViewState"] = value;
+            }
         }
         public string DefaultDate
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object defaultDate = ViewState["DefaultDateViewState"];
+                return (defaultDate == null) ? string.Empty : defaultDate.ToString();
+            }
+            set
+            {
+                ViewState["DefaultDateViewState"] = value;
+            }
         }
         public string MaxDate
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object maxDate = ViewState["MaxDateViewState"];
+                return (maxDate == null) ? string.Empty : maxDate.ToString();
+            }
+            set
+            {
+                ViewState["MaxDateViewState"] = value;
+            }
         }
         public string MinDate
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object minDate = ViewState["MinDateViewState"];
+                return (minDate == null) ? string.Empty : minDate.ToString();
+            }
+            set
+            {
+                ViewState["MinDateViewState"] = value;
+            }
         }
         public string MonthNames
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object monthNames = ViewState["MonthNamesViewState"];
+                return (monthNames == null) ? string.Empty : monthNames.ToString();
+            }
+            set
+            {
+                ViewState["MonthNamesViewState"] = value;
+            }
         }
         public string MonthNamesShort
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object monthNamesShort = ViewState["MonthNamesShortViewState"];
+                return (monthNamesShort == null) ? string.Empty : monthNamesShort.ToString();
+            }
+            set
+            {
+                ViewState["MonthNamesShortViewState"] = value;
+            }
         }
         public string NumberOfMonths
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object numberOfMonths = ViewState["NumberOfMonthsViewState"];
+                return (NumberOfMonths == null) ? string.Empty : NumberOfMonths.ToString();
+            }
+            set
+            {
+                ViewState["NumberOfMonthsViewState"] = value;
+            }
         }
         public string ShortYearCutoff
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object shortYearCutoff = ViewState["ShortYearCutoffViewState"];
+                return (shortYearCutoff == null) ? string.Empty : shortYearCutoff.ToString();
+            }
+            set
+            {
+                ViewState["ShortYearCutoffViewState"] = value;
+            }
         }
         public string ShowOptions
         {
-            get { return ""; }
-            set { ViewState["ViewState"] = value; }
+            get
+            {
+                object showOptions = ViewState["ShowOptionsViewState"];
+                return (showOptions == null) ? string.Empty : showOptions.ToString();
+            }
+            set
+            {
+                ViewState["ShowOptionsViewState"] = value;
+            }
         }
 
         #endregion
