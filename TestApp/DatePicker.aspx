@@ -16,7 +16,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <calendar:JQDatePicker ID="JQDatePicker1" runat="server" />
+        <calendar:JQDatePicker ID="JQDatePicker2" runat="server" Mode="Calendar" />
+        <calendar:JQDatePicker ID="JQDatePicker1" runat="server" Mode="DatePicker" />
     </div>
     </form>
 </body>

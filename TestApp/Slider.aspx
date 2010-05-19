@@ -16,7 +16,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <slider:JQSlider ID="JQSlider1" runat="server" />
+        <slider:JQSlider ID="JQSlider1" runat="server" Value="40" />
     </div>
     </form>
 </body>

@@ -22,6 +22,15 @@ namespace TestApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// JQDatePicker2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Atom.Web.UI.WebControls.DatePicker.JQDatePicker JQDatePicker2;
+        
+        /// <summary>
         /// JQDatePicker1 control.
         /// </summary>
         /// <remarks>

@@ -17,9 +17,24 @@
     <form id="form1" runat="server">
     <div>
         <tabs:JQTabs ID="JQTabs1" runat="server">
-            <tabs:Tab>
+            <tabs:Tab Header="tab0">
+                <Template>
+                    0
+                </Template>
+            </tabs:Tab>
+            <tabs:Tab Header="tab1">
                 <Template>
                     1
+                </Template>
+            </tabs:Tab>
+            <tabs:Tab Header="tab2">
+                <Template>
+                    2
+                </Template>
+            </tabs:Tab>
+            <tabs:Tab Header="tab3">
+                <Template>
+                    3
                 </Template>
             </tabs:Tab>
         </tabs:JQTabs>
