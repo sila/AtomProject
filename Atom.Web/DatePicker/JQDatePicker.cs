@@ -968,14 +968,14 @@ namespace Atom.Web.UI.WebControls.DatePicker
         [
         Category("Behavior"),
         Description(""),
-        DefaultValue("")
+        DefaultValue(1)
         ]
-        public string NumberOfMonths
+        public int NumberOfMonths
         {
             get
             {
                 object numberOfMonths = ViewState["NumberOfMonthsViewState"];
-                return (NumberOfMonths == null) ? string.Empty : NumberOfMonths.ToString();
+                return (NumberOfMonths == null) ? 1 : Convert.ToInt32(NumberOfMonths);
             }
             set
             {
