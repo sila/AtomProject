@@ -828,6 +828,40 @@ namespace Atom.Web.UI.WebControls.DatePicker
         [
         Category("Behavior"),
         Description(""),
+        DefaultValue(1)
+        ]
+        public int NumberOfMonthsHorizontal
+        {
+            get
+            {
+                object numberOfMonthsHorizontal = ViewState["NumberOfMonthsHorizontalViewState"];
+                return (numberOfMonthsHorizontal == null) ? 1 : Convert.ToInt32(numberOfMonthsHorizontal);
+            }
+            set
+            {
+                ViewState["NumberOfMonthsHorizontalViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(0)
+        ]
+        public int NumberOfMonthsVertical
+        {
+            get
+            {
+                object numberOfMonthsVertical = ViewState["NumberOfMonthsVerticalViewState"];
+                return (numberOfMonthsVertical == null) ? 0 : Convert.ToInt32(numberOfMonthsVertical);
+            }
+            set
+            {
+                ViewState["NumberOfMonthsVerticalViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
         DefaultValue(0)
         ]
         public int FirstDay
@@ -965,23 +999,7 @@ namespace Atom.Web.UI.WebControls.DatePicker
             }
         }
 
-        [
-        Category("Behavior"),
-        Description(""),
-        DefaultValue(1)
-        ]
-        public int NumberOfMonths
-        {
-            get
-            {
-                object numberOfMonths = ViewState["NumberOfMonthsViewState"];
-                return (NumberOfMonths == null) ? 1 : Convert.ToInt32(NumberOfMonths);
-            }
-            set
-            {
-                ViewState["NumberOfMonthsViewState"] = value;
-            }
-        }
+      
         [
         Category("Behavior"),
         Description(""),
