@@ -27,6 +27,7 @@ namespace Atom.Web.UI.WebControls.DatePicker
             startupScript.AppendFormat("$(document).ready(function() {{ ");
             startupScript.AppendFormat(this.UniqueID + " = $('#" + this.UniqueID + "');");
             startupScript.AppendFormat(this.UniqueID + ".datepicker({{");
+            #region bool type properties
             if (!this.Enabled)
             {
                 startupScript.AppendFormat(" disabled: true,");
@@ -87,6 +88,8 @@ namespace Atom.Web.UI.WebControls.DatePicker
             {
                 startupScript.AppendFormat(" showOtherMonths: true,");
             }
+            #endregion
+            #region int type properties
             if (this.FirstDay != 0)
             {
                 startupScript.AppendFormat(" firstDay: {0},", this.FirstDay);
@@ -99,8 +102,90 @@ namespace Atom.Web.UI.WebControls.DatePicker
             {
                 startupScript.AppendFormat(" showCurrentAtPos: {0},", this.ShowCurrentAtPos);
             }
-
-            //array type properties
+            #endregion
+            //calendar matrix
+            startupScript.AppendFormat(" numberOfMonths: [{0}, {1}],", this.NumberOfMonthsVertical, this.NumberOfMonthsHorizontal);
+            #region string type properties
+            if (!string.IsNullOrEmpty(this.AltField))
+            {
+                startupScript.AppendFormat(" altField: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.AltFormat))
+            {
+                startupScript.AppendFormat(" altFormat: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.AppendText))
+            {
+                startupScript.AppendFormat(" appendText: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.ButtonImage))
+            {
+                startupScript.AppendFormat(" buttonImage: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.ButtonText))
+            {
+                startupScript.AppendFormat(" buttonText: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.CloseText))
+            {
+                startupScript.AppendFormat(" closeText: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.CurrentText))
+            {
+                startupScript.AppendFormat(" currentText: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.DateFormat))
+            {
+                startupScript.AppendFormat(" dateFormat: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.WeekHeader))
+            {
+                startupScript.AppendFormat(" weekHeader: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.YearRange))
+            {
+                startupScript.AppendFormat(" yearRange: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.YearSuffix))
+            {
+                startupScript.AppendFormat(" yearSuffix: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.NextText))
+            {
+                startupScript.AppendFormat(" nextText: \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.PrevText))
+            {
+                startupScript.AppendFormat(" prevText: \"{0}\",");
+            }
+            //parrerns
+            if (!string.IsNullOrEmpty(this.DefaultDatePattern))
+            {
+                startupScript.AppendFormat(": \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.MaxDatePattern))
+            {
+                startupScript.AppendFormat(": \"{0}\",");
+            }
+            if (!string.IsNullOrEmpty(this.MinDatePattern))
+            {
+                startupScript.AppendFormat(": \"{0}\",");
+            }
+            //enums
+            if (this.ShowOn != DatePickerShowOn.Focus)
+            {
+                startupScript.AppendFormat(" showOn: {0},", this.ShowOn.ToString().ToLower());
+            }
+            if (this.Duration != DatePickerDuration.Normal)
+            {
+                startupScript.AppendFormat(" duration: {0},", this.Duration.ToString().ToLower());
+            }
+            if (this.ShowAnimation != DatePickerAnimation.Show)
+            {
+                startupScript.AppendFormat(" showAnim: {0},", this.ShowAnimation.ToString().ToLower());
+            }
+            #endregion
+            #region array type properties
             if (!string.IsNullOrEmpty(this.DayNames))
             {
                 startupScript.AppendFormat(" dayNames: [{0}],", this.DayNames);
@@ -121,7 +206,8 @@ namespace Atom.Web.UI.WebControls.DatePicker
             {
                 startupScript.AppendFormat(" monthNamesShort: [{0}],", this.MonthNamesShort);
             }
-            //calendar matrix
+            #endregion
+
 
             startupScript.AppendFormat("}})");
             if ((this.Mode == DatePickerMode.Calendar) && (this.Draggable))
@@ -910,26 +996,26 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["ShowCurrentAtPosViewState"] = value;
             }
         }
+
+        #endregion
+        #region arr
         [
         Category("Behavior"),
         Description(""),
         DefaultValue(0)
         ]
-        public int MonthNamesShort
+        public string MonthNamesShort
         {
             get
             {
                 object monthNamesShort = ViewState["MonthNamesShortViewState"];
-                return (monthNamesShort == null) ? 0 : Convert.ToInt32(monthNamesShort);
+                return (monthNamesShort == null) ? string.Empty : monthNamesShort.ToString();
             }
             set
             {
                 ViewState["MonthNamesShortViewState"] = value;
             }
         }
-        #endregion
-        #region arr
-
         [
         Category("Behavior"),
         Description(""),
@@ -998,8 +1084,6 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["MonthNamesViewState"] = value;
             }
         }
-
-      
         [
         Category("Behavior"),
         Description(""),
@@ -1034,7 +1118,6 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["ShowOptionsViewState"] = value;
             }
         }
-
         #endregion
         #region inherit properties
 
