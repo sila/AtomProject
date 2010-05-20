@@ -80,6 +80,7 @@ namespace Atom.Web.UI.WebControls.Progressbar
             startupScript.AppendFormat("<script type=\"text/javascript\">");
             startupScript.AppendFormat("var " + this.UniqueID + ";");
             startupScript.AppendFormat("$(document).ready(function() {{ ");
+
             startupScript.AppendFormat("var progressbar" + this.UniqueID + " = $('#" + this.UniqueID + "progressbar'); " + this.UniqueID + "= progressbar" + this.UniqueID + ";");
             startupScript.AppendFormat("progressbar" + this.UniqueID + ".progressbar({{");
             startupScript.AppendFormat("value: parseInt($('#" + this.UniqueID + "hiddenValue').val().split(':')[1]), ");

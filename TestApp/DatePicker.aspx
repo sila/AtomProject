@@ -12,7 +12,7 @@
 
         function Button1_onclick()
         {
-            $('#temp').val( new Date());
+            $('#temp').val(new Date());
         }
 
     </script>
@@ -20,10 +20,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <input type="text" name="temp" id="temp" value="" />
-        <input id="Button1" type="button" value="button" onclick="return Button1_onclick()" />
-        <calendar:JQDatePicker ID="JQDatePicker2" runat="server" Mode="Calendar" />
-        <calendar:JQDatePicker ID="JQDatePicker1" runat="server" Mode="DatePicker" />
+        <div style="float: left">
+            <input type="text" name="temp" id="temp" value="" />
+            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <input id="Button1" type="button" value="button" onclick="return Button1_onclick()" />
+        </div>
+        <div style="float: left">
+            <calendar:JQDatePicker ID="JQDatePicker2" runat="server" Mode="Calendar" />
+        </div>
+        <div style="float: left">
+            <calendar:JQDatePicker ID="JQDatePicker1" runat="server" Mode="DatePicker" />
+        </div>
     </div>
     </form>
 </body>

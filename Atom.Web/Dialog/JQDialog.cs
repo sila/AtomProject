@@ -149,7 +149,6 @@ namespace Atom.Web.UI.WebControls.Dialog
 
                 if (this.Position == DialogPosition.TopRight)
                 { startupScript.AppendFormat(" position: ['top','right'],"); }
-
             }
             if (!this.Resizable)
             {
