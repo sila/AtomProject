@@ -8,14 +8,20 @@
     <link href="themes/base/ui.all.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-ui-1.8.custom.min.js" type="text/javascript"></script>
-    <script type="text/javascript">    
-    
-    
+    <script type="text/javascript">
+
+        function Button1_onclick()
+        {
+            $('#temp').val( new Date());
+        }
+
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+        <input type="text" name="temp" id="temp" value="" />
+        <input id="Button1" type="button" value="button" onclick="return Button1_onclick()" />
         <calendar:JQDatePicker ID="JQDatePicker2" runat="server" Mode="Calendar" />
         <calendar:JQDatePicker ID="JQDatePicker1" runat="server" Mode="DatePicker" />
     </div>
