@@ -17,17 +17,20 @@
     <form id="form1" runat="server">
     <div>
         <accordion:JQAccordion ID="JQAccordion1" runat="server">
-            <accordion:Item>
+            <accordion:Item Header="accItem0">
                 <Template>
-                    1</Template>
+                    0
+                </Template>
             </accordion:Item>
-            <accordion:Item>
+            <accordion:Item Header="accItem1">
                 <Template>
-                    2</Template>
+                    1
+                </Template>
             </accordion:Item>
-            <accordion:Item>
+            <accordion:Item Header="accItem2">
                 <Template>
-                    3</Template>
+                    2
+                </Template>
             </accordion:Item>
         </accordion:JQAccordion>
     </div>

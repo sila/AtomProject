@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <progressbar:JQProgressbar ID="JQProgressbar1" runat="server" />
+        <progressbar:JQProgressbar ID="JQProgressbar1" runat="server" Value="60" />
     </div>
     </form>
 </body>

@@ -18,7 +18,8 @@
     <div>
         <dialog:JQDialog ID="JQDialog1" runat="server">
             <Template>
-                1</Template>
+                dialog:JQDialog ID="JQDialog1" runat="server"
+            </Template>
         </dialog:JQDialog>
     </div>
     </form>

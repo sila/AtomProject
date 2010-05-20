@@ -100,6 +100,28 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 startupScript.AppendFormat(" showCurrentAtPos: {0},", this.ShowCurrentAtPos);
             }
 
+            //array type properties
+            if (!string.IsNullOrEmpty(this.DayNames))
+            {
+                startupScript.AppendFormat(" dayNames: [{0}],", this.DayNames);
+            }
+            if (!string.IsNullOrEmpty(this.DayNamesMin))
+            {
+                startupScript.AppendFormat(" dayNamesMin: [{0}],", this.DayNamesMin);
+            }
+            if (!string.IsNullOrEmpty(this.DayNamesShort))
+            {
+                startupScript.AppendFormat(" dayNamesShort: [{0}],", this.DayNamesShort);
+            }
+            if (!string.IsNullOrEmpty(this.MonthNames))
+            {
+                startupScript.AppendFormat(" monthNames: [{0}],", this.MonthNames);
+            }
+            if (!string.IsNullOrEmpty(this.MonthNamesShort))
+            {
+                startupScript.AppendFormat(" monthNamesShort: [{0}],", this.MonthNamesShort);
+            }
+            //calendar matrix
 
             startupScript.AppendFormat("}})");
             if ((this.Mode == DatePickerMode.Calendar) && (this.Draggable))
@@ -629,6 +651,58 @@ namespace Atom.Web.UI.WebControls.DatePicker
             }
         }
 
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public string DefaultDatePattern
+        {
+            get
+            {
+                object defaultDatePattern = ViewState["DefaultDatePatternViewState"];
+                return (defaultDatePattern == null) ? string.Empty : defaultDatePattern.ToString();
+            }
+            set
+            {
+                ViewState["DefaultDatePatternViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public string MaxDatePattern
+        {
+            get
+            {
+                object maxDatePattern = ViewState["MaxDatePatternViewState"];
+                return (maxDatePattern == null) ? string.Empty : maxDatePattern.ToString();
+            }
+            set
+            {
+                ViewState["MaxDatePatternViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public string MinDatePattern
+        {
+            get
+            {
+                object minDatePattern = ViewState["MinDatePatternViewState"];
+                return (minDatePattern == null) ? string.Empty : minDatePattern.ToString();
+            }
+            set
+            {
+                ViewState["MinDatePatternViewState"] = value;
+            }
+        }
+
         //enum
         [
         Category("Behavior"),
@@ -698,6 +772,57 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["ModeViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public DateTime DefaultDate
+        {
+            get
+            {
+                object defaultDate = ViewState["DefaultDateViewState"];
+                return (defaultDate == null) ? DateTime.Today : Convert.ToDateTime(defaultDate);
+            }
+            set
+            {
+                ViewState["DefaultDateViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public DateTime MaxDate
+        {
+            get
+            {
+                object maxDate = ViewState["MaxDateViewState"];
+                return (maxDate == null) ? DateTime.MaxValue : Convert.ToDateTime(maxDate);
+            }
+            set
+            {
+                ViewState["MaxDateViewState"] = value;
+            }
+        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
+        public DateTime MinDate
+        {
+            get
+            {
+                object minDate = ViewState["MinDateViewState"];
+                return (minDate == null) ? DateTime.MinValue : Convert.ToDateTime(minDate);
+            }
+            set
+            {
+                ViewState["MinDateViewState"] = value;
+            }
+        }
         #endregion
         #region int
         [
@@ -751,9 +876,31 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["ShowCurrentAtPosViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue(0)
+        ]
+        public int MonthNamesShort
+        {
+            get
+            {
+                object monthNamesShort = ViewState["MonthNamesShortViewState"];
+                return (monthNamesShort == null) ? 0 : Convert.ToInt32(monthNamesShort);
+            }
+            set
+            {
+                ViewState["MonthNamesShortViewState"] = value;
+            }
+        }
         #endregion
         #region arr
 
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string DayNames
         {
             get
@@ -766,6 +913,11 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["DayNamesViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string DayNamesMin
         {
             get
@@ -778,6 +930,11 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["DayNamesMinViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string DayNamesShort
         {
             get
@@ -790,42 +947,11 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["DayNamesShortViewState"] = value;
             }
         }
-        public string DefaultDate
-        {
-            get
-            {
-                object defaultDate = ViewState["DefaultDateViewState"];
-                return (defaultDate == null) ? string.Empty : defaultDate.ToString();
-            }
-            set
-            {
-                ViewState["DefaultDateViewState"] = value;
-            }
-        }
-        public string MaxDate
-        {
-            get
-            {
-                object maxDate = ViewState["MaxDateViewState"];
-                return (maxDate == null) ? string.Empty : maxDate.ToString();
-            }
-            set
-            {
-                ViewState["MaxDateViewState"] = value;
-            }
-        }
-        public string MinDate
-        {
-            get
-            {
-                object minDate = ViewState["MinDateViewState"];
-                return (minDate == null) ? string.Empty : minDate.ToString();
-            }
-            set
-            {
-                ViewState["MinDateViewState"] = value;
-            }
-        }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string MonthNames
         {
             get
@@ -838,18 +964,12 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["MonthNamesViewState"] = value;
             }
         }
-        public string MonthNamesShort
-        {
-            get
-            {
-                object monthNamesShort = ViewState["MonthNamesShortViewState"];
-                return (monthNamesShort == null) ? string.Empty : monthNamesShort.ToString();
-            }
-            set
-            {
-                ViewState["MonthNamesShortViewState"] = value;
-            }
-        }
+
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string NumberOfMonths
         {
             get
@@ -862,6 +982,11 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["NumberOfMonthsViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string ShortYearCutoff
         {
             get
@@ -874,6 +999,11 @@ namespace Atom.Web.UI.WebControls.DatePicker
                 ViewState["ShortYearCutoffViewState"] = value;
             }
         }
+        [
+        Category("Behavior"),
+        Description(""),
+        DefaultValue("")
+        ]
         public string ShowOptions
         {
             get
