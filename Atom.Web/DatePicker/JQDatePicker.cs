@@ -174,15 +174,15 @@ namespace Atom.Web.UI.WebControls.DatePicker
             //enums
             if (this.ShowOn != DatePickerShowOn.Focus)
             {
-                startupScript.AppendFormat(" showOn: {0},", this.ShowOn.ToString().ToLower());
+                startupScript.AppendFormat(" showOn: '{0}',", this.ShowOn.ToString().ToLower());
             }
             if (this.Duration != DatePickerDuration.Normal)
             {
-                startupScript.AppendFormat(" duration: {0},", this.Duration.ToString().ToLower());
+                startupScript.AppendFormat(" duration: '{0}',", this.Duration.ToString().ToLower());
             }
             if (this.ShowAnimation != DatePickerAnimation.Show)
             {
-                startupScript.AppendFormat(" showAnim: {0},", this.ShowAnimation.ToString().ToLower());
+                startupScript.AppendFormat(" showAnim: '{0}',", this.ShowAnimation.ToString().ToLower());
             }
             #endregion
             #region array type properties
