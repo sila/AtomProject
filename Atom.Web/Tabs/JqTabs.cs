@@ -742,7 +742,7 @@ namespace Atom.Web.UI.WebControls.Tabs
             }
         }
 
-
+        #region inherit properties
         [
         EditorBrowsable(EditorBrowsableState.Never),
         DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
@@ -890,6 +890,7 @@ namespace Atom.Web.UI.WebControls.Tabs
                 base.CssClass = value;
             }
         }
+        #endregion
     }
 
 
