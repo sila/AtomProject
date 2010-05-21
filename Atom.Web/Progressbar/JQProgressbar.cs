@@ -153,6 +153,7 @@ namespace Atom.Web.UI.WebControls.Progressbar
         {
             this.RaisePostBackEvent(eventArgument);
         }
+
         [
         Category("Behavior"),
         Description(""),
