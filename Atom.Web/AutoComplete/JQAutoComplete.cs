@@ -13,7 +13,7 @@ namespace Atom.Web.UI.WebControls.AutoComplete
     [
     AspNetHostingPermission(SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal),
     AspNetHostingPermission(SecurityAction.InheritanceDemand, Level = AspNetHostingPermissionLevel.Minimal),
-    Designer(typeof(AutoCompleteDesigner)),
+    //Designer(typeof(AutoCompleteDesigner)),
     ToolboxData("<{0}:JQAutoComplete runat=\"server\"> </{0}:JQAutoComplete>")
     ]
     public class JQAutoComplete : WebControl
