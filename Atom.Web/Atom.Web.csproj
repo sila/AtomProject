@@ -51,7 +51,6 @@
     <Compile Include="Accordion\ItemChangeType.cs" />
     <Compile Include="Accordion\ItemCollectionEditor.cs" />
     <Compile Include="Accordion\JQAccordion.cs" />
-    <Compile Include="AutoComplete\Design\AutoCompleteDesigner.cs" />
     <Compile Include="AutoComplete\JQAutoComplete.cs" />
     <Compile Include="Button\ButtonType.cs" />
     <Compile Include="Button\Design\ButtonDesigner.cs" />
@@ -89,6 +88,7 @@
     <Compile Include="Tabs\TabOrientation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AutoComplete\Design\" />
     <Folder Include="AutoComplete\EventArgs\" />
     <Folder Include="Button\EventArgs\" />
     <Folder Include="DatePicker\EventArgs\" />
