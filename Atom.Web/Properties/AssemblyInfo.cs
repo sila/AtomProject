@@ -9,6 +9,7 @@ using System.Web.UI;
 [assembly: AssemblyTitle("Atom.Web")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls", "atom")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Accordion", "accordion")]
+[assembly: TagPrefix("Atom.Web.UI.WebControls.AutoComplete", "complete")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Progressbar", "progressbar")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Tabs", "tabs")]
 [assembly: TagPrefix("Atom.Web.UI.WebControls.Dialog", "dialog")]
