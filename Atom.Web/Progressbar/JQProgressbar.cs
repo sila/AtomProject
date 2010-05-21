@@ -153,6 +153,7 @@ namespace Atom.Web.UI.WebControls.Progressbar
         {
             this.RaisePostBackEvent(eventArgument);
         }
+
         [
         Category("Behavior"),
         Description(""),
@@ -188,5 +189,166 @@ namespace Atom.Web.UI.WebControls.Progressbar
                 ViewState["ResizableViewState"] = value;
             }
         }
+
+        #region inherit properties
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override System.Drawing.Color BackColor
+        {
+            get
+            {
+                return base.BackColor;
+            }
+            set
+            {
+                base.BackColor = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override BorderStyle BorderStyle
+        {
+            get
+            {
+                return base.BorderStyle;
+            }
+            set
+            {
+                base.BorderStyle = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override Unit BorderWidth
+        {
+            get
+            {
+                return base.BorderWidth;
+            }
+            set
+            {
+                base.BorderWidth = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override System.Drawing.Color BorderColor
+        {
+            get
+            {
+                return base.BorderColor;
+            }
+            set
+            {
+                base.BorderColor = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override FontInfo Font
+        {
+            get
+            {
+                return base.Font;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override bool EnableTheming
+        {
+            get
+            {
+                return base.EnableTheming;
+            }
+            set
+            {
+                base.EnableTheming = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override string ToolTip
+        {
+            get
+            {
+                return base.ToolTip;
+            }
+            set
+            {
+                base.ToolTip = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        Browsable(false),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override string SkinID
+        {
+            get
+            {
+                return base.SkinID;
+            }
+            set
+            {
+                base.SkinID = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override System.Drawing.Color ForeColor
+        {
+            get
+            {
+                return base.ForeColor;
+            }
+            set
+            {
+                base.ForeColor = value;
+            }
+        }
+
+        [
+        EditorBrowsable(EditorBrowsableState.Never),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
+        ]
+        public override string CssClass
+        {
+            get
+            {
+                return base.CssClass;
+            }
+            set
+            {
+                base.CssClass = value;
+            }
+        }
+
+        #endregion
     }
 }

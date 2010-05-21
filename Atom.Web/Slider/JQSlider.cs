@@ -233,9 +233,7 @@ namespace Atom.Web.UI.WebControls.Slider
             }
         }
 
-
-
-
+        #region inherit properties
         [
         EditorBrowsable(EditorBrowsableState.Never),
         DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
@@ -383,6 +381,7 @@ namespace Atom.Web.UI.WebControls.Slider
                 base.CssClass = value;
             }
         }
+        #endregion
     }
 
 }
